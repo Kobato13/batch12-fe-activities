@@ -1,8 +1,38 @@
+/*body {
+    background-image: url("../images/background.jpg");
+    height: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: fixed;
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    left: 10em;
+}
+
+nav > h3 > a {
+    text-decoration: none;
+}
+
+nav > h3 > a:hover {
+    text-decoration: underline;
+}
+
 #main {
     padding: 25px 0;
-    min-width: 600px;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #title {
@@ -38,6 +68,18 @@
 
 .highlight-info {
     text-indent: 0px;
+}
+
+#about {
+    width: 100%;
+    background-color: rgb(185, 150, 150);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+article {
+    width: 800px;
 }
 
 p {
