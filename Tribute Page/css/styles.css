@@ -1,13 +1,14 @@
-/*body {
-    background-image: url("../images/background.jpg");
+body {
+    background-image: url("../images/simplebackground.jpg");
     height: 100%;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-  }*/
+  }
 
 html {
     scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -20,11 +21,17 @@ nav {
 }
 
 nav > h3 > a {
+    font-size: 150%;
+    -webkit-text-stroke: 1px black;
     text-decoration: none;
+    color: rgb(169, 169, 230);
+    
 }
 
 nav > h3 > a:hover {
     text-decoration: underline;
+    text-decoration-color: rgb(126, 126, 172);
+    color: rgb(126, 126, 172);
 }
 
 #main {
@@ -37,13 +44,19 @@ nav > h3 > a:hover {
 
 #title {
     text-align: center;
-    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70px;
+    color: rgb(126, 126, 172);
 }
 
 #quote {
     text-align: center;
     font-size: 20px;
     font-style: italic;
+}
+
+#img-div {
+    padding: 30px;
 }
 
 #image {
@@ -56,33 +69,87 @@ nav > h3 > a:hover {
 
 #img-caption {
     text-align: center;
+    color: rgb(126, 126, 172);
 }
 
 #tribute-info {
-    padding-top: 15px;
+    padding: 15px;
+    line-height: 2;
 }
 
 #highlights {
-    padding: 15px;
-}
-
-.highlight-info {
-    text-indent: 0px;
-}
-
-#about {
+    padding: 70px;
+    color: white;
     width: 100%;
-    background-color: rgb(185, 150, 150);
+    background-color: rgb(32, 32, 32);
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+#highlights > article > h2 {
+    font-size: 50px;
+    color: rgb(169, 169, 230);
+}
+
+.highlight-info {
+    text-indent: 30px;
+}
+
+#about {
+    line-height: 2;
+    padding: 70px;
+    color: white;
+    width: 100%;
+    background-color: rgb(32, 32, 32);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#about > article > h2 {
+    font-size: 50px;
+    color: rgb(169, 169, 230);
 }
 
 article {
     width: 800px;
 }
 
+#lifestory {
+    line-height: 2;
+    padding-bottom: 25px;
+}
+
+#lifestory > article > h2 {
+    font-size: 50px;
+    color: rgb(126, 126, 172);
+}
+
 p {
     text-indent: 50px;
     text-align: justify;
+}
+
+footer {
+    font-size: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tribute-link {
+    padding: 15px;
+    background-color: black;
+}
+
+#tribute-link > a {
+    color: white;
+    text-decoration: none;
+}
+
+#tribute-link > a:hover {
+    color: white;
+    text-decoration: underline;
 }
