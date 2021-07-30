@@ -2,9 +2,7 @@ body {
     background-image: url("../images/simplebackground.jpg");
     height: 100%;
     background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+}
 
 html {
     scroll-behavior: smooth;
@@ -41,7 +39,7 @@ h2 {
 }
 
 #main {
-    padding: 25px 0;
+    padding: 25px;
     width: 100%;
     display: flex;
     flex-direction: column;
