@@ -17,7 +17,7 @@ nav {
     flex-direction: column;
     display: flex;
     justify-content: space-between;
-    left: 10em;
+    left: 5em;
 }
 
 nav > h3 > a {
