@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="survey-container">
+
+        <div class="image-container"></div>
+
+        <form id="survey-form" autocomplete="off" method="GET">
+
+            <div class="header-info">
+              <h1 id="title">Survey Form</h1>
+              <p id="description">Thank you for taking the time to help us improve the service</p>
+            </div>
+
+            <div class="form-group">
+              <input type="text" name="name" id="name" class="form-control" required/>
+              <label id="name-label" for="name">
+                <span class="content-name">
+                  Full name
+                </span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <input type="email" name="email" id="email" class="form-control" placeholder=" " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+              <label id="email-label" for="email">
+                <span class="content-name">
+                  Email
+                </span>
+            </div>
+
+            <div class="form-group">
+              <input type="number" name="age" id="number" class="form-control" placeholder=" " pattern="[0-9]{3}" min="1" max="110" required/>
+              <label id="number-label" for="number">
+                <span class="content-name">
+                  Age
+                </span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <p>Which option best describes your current role?</p>
+              
+              <div class="select-group">
+                <select id="dropdown" name="role" class="form-control" required>
+                  <option id="unselected" disabled selected value>Select current role</option>
+                  <option class="selected" value="student">Student</option>
+                  <option class="selected" value="job">Full Time Job</option>
+                  <option class="selected" value="learner">Part Time Job</option>
+                  <option class="selected" value="preferNo">Prefer not to say</option>
+                  <option class="selected" value="other">Other</option>
+                </select>
+              </div>   
+            </div>
+
+            <div class="form-group">
+              <p>Hobbies and Interests</p>
+              <div class="form-control">
+                <ul class="checkbox-container">
+                  <ul class="checkbox-left">
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="languages" id="languages">
+                      <label for="languages" >Learning Languanges</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="writing" id="writing">
+                      <label for="writing" >Writing</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="blogging" id="blogging">
+                      <label for="blogging" >Blogging</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="art" id="art">
+                      <label for="art" >Art</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="reading" id="reading">
+                      <label for="reading" >Reading</label>
+                    </div>
+                  </ul>
+                  <ul class="checkbox-right">
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="makingmusic" id="makingmusic">
+                      <label for="makingmusic" >Making Music</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="listeningtomusic" id="listeningtomusic">
+                      <label for="listeningtomusic" >Listening to Music</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="sports" id="sports">
+                      <label for="sports" >Sports</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="travel" id="travel">
+                      <label for="travel" >Travel</label>
+                    </div>
+                    <div class="checkbox-item">
+                      <input type="checkbox" name="hobbies" value="coding" id="coding">
+                      <label for="coding" >Coding</label>
+                    </div>
+                  </ul>
+
+                </ul>
+              </div>
+            </div>
+
+            <div class="form-group gender-box">
+              <label class="field-label" for="gender">Gender</label>
+                <div id="genders">
+                  <article>
+                    <input checked id="male" value="male" type="radio" name="gender" required>
+                    <label class="radio" for="male">Male</label>
+                  </article>
+                  <article>
+                    <input id="female" value="female" type="radio" name="gender">
+                    <label class="radio" for="female">Female</label>
+                  </article>
+                  <article>
+                    <input id="other" value="other" type="radio" name="gender">
+                    <label class="radio" for="other">Prefer Not to Say</label>
+                  </article>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label class="field-label" for="comment">Additional Comments (Optional)</label>
+                <textarea class="form-control-comment" name="comment" id="comment" cols="30" rows="4" placeholder="Write a comment..."></textarea>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+            </div>
+
+            <div id="invalid-msg">
+              You must fill in all of the fields.
+            </div>
+              <button type="submit" id="submit">Submit</button>
+
+        </form>
+      </div>
+
+    </div>
+
+    <script src= "./index.js"></script>
+  </body>
+</html>
