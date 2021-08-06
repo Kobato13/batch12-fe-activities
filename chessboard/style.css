@@ -55,7 +55,7 @@ body {
   background-color: var(--color-1) !important;
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 686px) {
   .piece, .piece2 {
     font-size: 5vh;
     height: 6vh;
