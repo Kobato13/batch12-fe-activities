@@ -42,7 +42,7 @@ body {
 .piece, .piece2 {
   background-color: var(--color-2);
   font-size: 10vmin;
-  height: 11vmin;
+  height: 11.2vmin;
   width: 11vmin;
   display: flex;
   justify-content: center;
