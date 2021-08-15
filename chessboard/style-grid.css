@@ -18,7 +18,7 @@ body {
   background-image: url("background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  /*background-color: var(--color-4);*/
+  background-color: var(--color-4);
   height: 100vmin;
   display: grid;
   justify-content: center;
