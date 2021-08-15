@@ -70,7 +70,7 @@ body {
   left: 2em;
   width: 60px;
   height: 60px;
-  background: url('assets/open.png');
+  background: url('./assets/open.png');
   background-repeat: no-repeat;
   background-size: 40px;
   background-position: center;
@@ -80,7 +80,7 @@ body {
 }
 
 .toggle.active {
-  background: url('assets/close.png');
+  background: url('./assets/close.png');
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center;
@@ -417,7 +417,7 @@ details[open] summary:after {
 
 .awards-overlay {
   position: relative;
-  background: url('assets/7.jpg');
+  background: url('./assets/7.jpg');
   background-size: cover;
   height: 600px;
   width: 80%;
@@ -482,7 +482,7 @@ details[open] summary:after {
   width: 100%;
   height: 500px;
   margin-bottom: 5em;
-  background: url('assets/radiant_dire.jpg');
+  background: url('./assets/radiant_dire.jpg');
   background-size: cover;
   overflow-x: hidden;
 }
@@ -697,7 +697,7 @@ details[open] summary:after {
 }
 
 .close::after {
-  content: url("assets/close.png");
+  content: url("./assets/close.png");
   transform: scale(.2);
   color: var(--color-1);
   transition: transform 250ms ease-in;
