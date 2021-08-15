@@ -543,6 +543,7 @@ details[open] summary:after {
   font-size: 2em;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 0.2em;
+  padding-left: 2em;
   transform: translateY(-30px);
   display: flex;
   justify-content: center;
@@ -887,7 +888,6 @@ footer p {
   }
 }
 
-
 @media all and (max-width: 900px)
 {
   .toggle, .menu {
@@ -923,6 +923,10 @@ footer p {
 
 @media all and (max-width: 923px)
 {
+  .logo-2{
+    left: 2em;
+  }
+
   .grid-row-item h3 {
     transform: translateY(-240px);
   }
@@ -940,8 +944,16 @@ footer p {
   }
 }
 
-@media all and (max-width: 560px)
+@media all and (max-width: 770px)
 {
+  .logo-2 {
+    left: 2em;
+  }
+
+  #media-gallery-container {
+    top: 140vh;
+  }
+
   .game-overview2 {
     grid-template-columns: repeat(2, 40%);
     justify-content: space-around;
@@ -952,7 +964,148 @@ footer p {
   }
 }
 
+@media all and (max-width: 623)
+{
+  .navbar {
+    padding: 10px 50px;
+  }
 
+  .logo-2 {
+    left: 0.5em;
+  }
+
+  .text {
+    padding-left: 0;
+    padding-top: 0;
+  }
+
+  #game-info-container {
+    top: 115vh;
+  }
+
+  #awards-container {
+    top: 125vh
+  }
+
+  .carousel {
+    width: 70%;
+  }
+
+  .awards-overlay {
+    width: 90%;
+  }
+
+  .awards {
+    grid-template-columns: repeat(3, 25%);
+  }
+}
+
+@media all and (max-width: 500px)
+{
+  .navbar {
+    padding: 10px 0px;
+  }
+
+  .logo-2 {
+    display: none;
+  }
+
+  .text {
+    padding-left: 0;
+    padding-top: 0;
+  }
+
+  #game-info-container {
+    top: 115vh;
+  }
+
+  #awards-container {
+    top: 125vh
+  }
+
+  .carousel {
+    width: 70%;
+  }
+
+  .awards-overlay {
+    width: 90%;
+  }
+
+  .awards {
+    grid-template-columns: repeat(3, 25%);
+  }
+
+  .grid-row-image {
+    height: 220px;
+  }
+
+  .grid-row-item h3 {
+    transform: translateY(-220px);
+  }
+  
+  .grid-row-item p {
+    transform: translateY(-210px);
+  }
+  
+  .gif-1 {
+    transform: translateY(-227px);
+  }
+}
+
+@media all and (max-width: 425px)
+{
+  .awards {
+    grid-template-columns: repeat(2, 40%);
+  }
+
+  .grid-item-4 {
+    display: none;
+  }
+
+  .game-info {
+    padding-left: 3em;
+  }
+
+  details summary:after {
+    left: 11em;
+  }
+
+  .carousel {
+    width: 60%;
+    height: 400px;
+  }
+
+  .grid-row-image {
+    height: 190px;
+  }
+
+  .grid-row-item h3 {
+    transform: translateY(-190px);
+  }
+  
+  .grid-row-item p {
+    transform: translateY(-180px);
+  }
+  
+  .gif-1 {
+    transform: translateY(-197px);
+  }
+
+  .game-overview2 {
+    grid-template-columns: repeat(2, 45%);
+    grid-gap: 0;
+  }
+
+  .media-gallery {
+    grid: auto / repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .gallery-desc {
+    display: none;
+  }
+}
+
+/* MEDIA QUERY FOR CONTACT AND FEEDBACK */
 
 @media all and (max-width: 1295px)
 {
@@ -986,5 +1139,33 @@ footer p {
 {
   #contact-container, footer {
     top: 500vh;
+  }
+}
+
+@media all and (max-width: 770px)
+{
+  #contact-container, footer {
+    top: 460vh;
+  }
+}
+
+@media all and (max-width: 623)
+{
+  #contact-container, footer {
+    top: 395vh;
+  }
+}
+
+@media all and (max-width: 500)
+{
+  #contact-container, footer {
+    top: 340vh;
+  }
+}
+
+@media all and (max-width: 425)
+{
+  #contact-container, footer {
+    top: 245vh;
   }
 }
