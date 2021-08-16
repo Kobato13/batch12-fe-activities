@@ -1290,7 +1290,7 @@ footer p {
 @media all and (max-width: 770px)
 {
   #contact-container, footer {
-    top: 640vh;
+    top: 610vh;
   }
 
   .form-group {

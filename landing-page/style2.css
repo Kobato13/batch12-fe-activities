@@ -1001,6 +1001,10 @@ footer p {
     padding-top: 0;
   }
 
+  #carousel-container {
+    top: 125vh;
+  }
+
   #game-info-container {
     top: 135vh;
   }
@@ -1239,7 +1243,7 @@ footer p {
 @media all and (max-width: 770px)
 {
   #contact-container, footer {
-    top: 640vh;
+    top: 600vh;
   }
 
   .form-group {
