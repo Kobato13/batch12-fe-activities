@@ -1139,7 +1139,7 @@ footer p {
   }
 }
 
-@media all and (max-width: 425px)
+@media all and (max-width: 436px)
 {
   .navbar h3 {
     font-size: 1em;

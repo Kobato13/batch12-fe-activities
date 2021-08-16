@@ -1112,7 +1112,7 @@ footer p {
   }
 }
 
-@media all and (max-width: 425px)
+@media all and (max-width: 436px)
 {
   .navbar h3 {
     font-size: 1em;
@@ -1191,7 +1191,7 @@ footer p {
   }
 
   #media-gallery-container {
-    top: 375vh;
+    top: 315vh;
   }
 
   #media-gallery-container h1 {
@@ -1268,13 +1268,13 @@ footer p {
 @media all and (max-width: 425)
 {
   #contact-container, footer {
-    top: 460vh;
+    top: 430vh;
   }
 }
 
 @media all and (max-width: 320)
 {
   #contact-container, footer {
-    top: 430vh;
+    top: 410vh;
   }
 }
