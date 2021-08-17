@@ -858,7 +858,7 @@ textarea {
 
 footer {
   position: relative;
-  bottom: -240vh;
+  bottom: -150vh;
   width: 100%;
   padding-bottom: 1em;
   z-index: 3;
