@@ -858,7 +858,7 @@ textarea {
 
 footer {
   position: relative;
-  bottom: -230vh;
+  bottom: -240vh;
   width: 100%;
   padding-bottom: 1em;
   z-index: 3;
@@ -1021,6 +1021,15 @@ footer p {
   .gallery-lightbox-content {
     width: 85vw;
   }
+
+  .game-overview {
+    flex-direction: column;
+  }
+
+  .flex-item {
+    width: 100%;
+    padding-top: 3em;
+  }
 }
 
 @media all and (max-width: 623)
@@ -1060,15 +1069,6 @@ footer p {
 
   #game-overview-container {
     top: 145vh;
-  }
-
-  .game-overview {
-    flex-direction: column;
-  }
-
-  .flex-item {
-    width: 100%;
-    padding-bottom: 3em;
   }
 
   .game-overview2-container {
@@ -1261,6 +1261,31 @@ footer p {
 
   .media-gallery {
     grid: auto / repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+.main-container-2 {
+  position: relative;
+}
+
+@media all and (max-height: 780px)
+{
+  .main-container-2 {
+    top: 15vh;
+  }
+}
+
+@media all and (max-height: 680px)
+{
+  .main-container-2 {
+    top: 65vh;
+  }
+}
+
+@media all and (max-height: 680px)
+{
+  .main-container-2 {
+    top: 105vh;
   }
 }
 

@@ -993,6 +993,15 @@ footer p {
   .form-group {
     width: 90%;
   }
+
+  .game-overview {
+    flex-direction: column;
+  }
+
+  .flex-item {
+    width: 100%;
+    padding-top: 3em;
+  }
 }
 
 @media all and (max-width: 623)
@@ -1032,15 +1041,6 @@ footer p {
 
   #game-overview-container {
     top: 145vh;
-  }
-
-  .game-overview {
-    flex-direction: column;
-  }
-
-  .flex-item {
-    width: 100%;
-    padding-bottom: 3em;
   }
 
   .game-overview2-container {
