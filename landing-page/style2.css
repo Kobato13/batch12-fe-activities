@@ -1002,6 +1002,14 @@ footer p {
     width: 100%;
     padding-top: 3em;
   }
+
+  #carousel-container {
+    top: 125vh;
+  }
+
+  #game-info-container {
+    top: 135vh;
+  }
 }
 
 @media all and (max-width: 623)
@@ -1017,14 +1025,6 @@ footer p {
   .text {
     padding-left: 0;
     padding-top: 0;
-  }
-
-  #carousel-container {
-    top: 125vh;
-  }
-
-  #game-info-container {
-    top: 135vh;
   }
 
   #awards-container {
