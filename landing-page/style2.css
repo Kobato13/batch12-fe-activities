@@ -838,6 +838,11 @@ footer {
   width: 100%;
   padding-bottom: 1em;
   z-index: 3;
+  transform: translateY(50px);
+}
+
+footer .navbar {
+  transform: translateY(-70px);
 }
 
 footer p {
@@ -983,6 +988,10 @@ footer p {
 
   .gallery-lightbox-content {
     width: 85vw;
+  }
+
+  .form-group {
+    width: 90%;
   }
 }
 
@@ -1208,7 +1217,7 @@ footer p {
 @media all and (max-width: 1295px)
 {
   #contact-container, footer {
-    top: 230vh;
+    top: 240vh;
   }
 }
 
@@ -1243,15 +1252,12 @@ footer p {
 @media all and (max-width: 770px)
 {
   #contact-container, footer {
-    top: 600vh;
+    top: 670vh;
   }
 
-  .form-group {
-    width: 90%;
-  }
 }
 
-@media all and (max-width: 623)
+@media all and (max-width: 650)
 {
   #contact-container, footer {
     top: 600vh;

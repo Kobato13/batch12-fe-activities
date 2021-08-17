@@ -712,7 +712,7 @@ details[open] summary:after {
 
 #contact-container {
   position: relative;
-  top: 155vh;
+  bottom: 0;
   width: 100%;
   height: 600px;
   margin-bottom: 5em;
@@ -730,6 +730,11 @@ button, input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#description {
+  color: var(--color-4);
+  font-size: 1em;
 }
 
 #survey-form{
@@ -853,10 +858,15 @@ textarea {
 
 footer {
   position: relative;
-  top: 150vh;
+  bottom: -230vh;
   width: 100%;
   padding-bottom: 1em;
   z-index: 3;
+  transform: translateY(50px);
+}
+
+footer .navbar {
+  transform: translateY(-70px);
 }
 
 footer p {
@@ -922,6 +932,10 @@ footer p {
 
   .game-overview2 {
     grid-gap: 5em;
+  }
+
+  .form-group {
+    width: 90%;
   }
 }
 
@@ -1250,78 +1264,60 @@ footer p {
   }
 }
 
-/* MEDIA QUERY FOR CONTACT AND FEEDBACK */
+/* MEDIA QUERY FOR FOOTER */
 
-@media all and (max-width: 1295px)
+@media all and (max-width: 1255px)
 {
-  #contact-container, footer {
-    top: 230vh;
-  }
-}
-
-@media all and (max-width: 1225px)
-{
-  #contact-container, footer {
-    top: 220vh;
+  footer {
+    bottom: -220vh;
   }
 }
 
 @media all and (max-width: 1070px)
 {
-  #contact-container, footer {
-    top: 200vh;
-  }
-}
-
-@media all and (max-width: 1000px)
-{
-  #contact-container, footer {
-    top: 195vh;
+  footer {
+    bottom: -200vh;
   }
 }
 
 @media all and (max-width: 879px)
 {
-  #contact-container, footer {
-    top: 500vh;
+  footer {
+    bottom: -490vh;
   }
 }
 
 @media all and (max-width: 770px)
 {
-  #contact-container, footer {
-    top: 610vh;
-  }
-
-  .form-group {
-    width: 90%;
+  footer {
+    bottom: -630vh;
   }
 }
 
-@media all and (max-width: 623)
+@media all and (max-width: 650)
 {
-  #contact-container, footer {
-    top: 600vh;
+  footer {
+    bottom: -570vh;
   }
 }
 
 @media all and (max-width: 500)
 {
-  #contact-container, footer {
-    top: 530vh;
+  footer {
+    bottom: -520vh;
   }
 }
 
 @media all and (max-width: 425)
 {
-  #contact-container, footer {
-    top: 460vh;
+  footer {
+    bottom: -480vh;
   }
 }
 
 @media all and (max-width: 320)
 {
-  #contact-container, footer {
-    top: 430vh;
+  footer {
+    bottom: -430vh;
   }
 }
