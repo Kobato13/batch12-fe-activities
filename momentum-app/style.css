@@ -74,7 +74,7 @@ body {
   
   .input-container {
     display: flex;
-    width: 70vw;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -97,7 +97,7 @@ body {
     color: white;
     background-color: transparent;
     border: none;
-    width: 100%;
+    width: 90%;
     border-bottom: 1px solid white;
     text-shadow: .15rem .15rem black;
   }
@@ -107,7 +107,6 @@ body {
   }
   #focus-form input[type="text"] {
     font-size: 2rem;
-    width: 90%;
   }
   input:focus {
     outline: none;
@@ -435,6 +434,14 @@ body {
   .quotes-container {
     bottom: 0;
   }
+  .background-toggle {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+  }
+  .todo-toggle {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
   .todo-container{
     top: 0;
     left: 0;
@@ -442,6 +449,9 @@ body {
   } 
   .todo-sub-container {
     width: 100%;
+  }
+  .todo-sub-container h1 {
+    font-size: 1.5rem;
   }
 }
 
