@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Momentum App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- <link rel = "icon" href = "./assets/logo.png" type = "image/x-icon"> -->
+  </head>
+  <body>
+    
+    <div class="todo-toggle">
+      <p>ToDo</p>
+    </div>
+    <div class="todo-container">
+      <div class="todo-exit">
+        <span class="todo-exit-icon"><i class="fas fa-times"></i></span>
+      </div>
+      <div class="todo-sub-container">
+        <h1>ToDo List</h1>
+        <form class="todo-form" autocomplete="off">
+          <input type="text" class="todo-input" placeholder="Make ToDo...">
+          <button class="todo-button" type="submit">
+            <i class="fas fa-plus-square"></i>
+          </button>
+        </form>
+        <ul class="todo-list">
+          <!-- <li class="todo-item">
+            <button class="todo-complete">
+              <i class="fas fa-check"></i>
+            </button>
+            <p>To Do List Sample 1</p>
+            <button class="todo-delete">
+              <i class="fas fa-trash"></i>
+            </button>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+
+    <div class="background-toggle">
+      <p>Change Background</p>
+    </div>
+    <div class="image-container">
+      <div class="image-blend"></div>
+    </div>
+    <div class="main-container">
+      <div class="header">
+        <div class="time">
+          <!-- <h1>5:00 pm</h1> -->
+        </div>
+        <div class="container">
+          <div class="input-container">
+            <form id="input-form" autocomplete="off">
+              <h1>Hello, what's your name?</h1>
+              <input type="text" id="username">
+              <input type="submit" value="">
+            </form>
+          </div>
+          <div class="greetings-container">
+            <!-- <h1>Hi user, have a great day!</h1> -->
+          </div>
+          <div class="focus-container">
+            <form id="focus-form" autocomplete="off">
+              <h1>What is your main focus for today?</h1>
+              <input type="text" id="main-focus">
+              <input type="submit" value="">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="quotes-container">
+        <div class="quotes-container2">
+          <!-- <p>Quotes example, Quotes example, Quotes example, </p> -->
+        </div>
+        <div class="quotes-options">
+          <div class="new-quote">new quote</div>
+          <div class="add-quote">add quote</div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
