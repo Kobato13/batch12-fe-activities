@@ -79,10 +79,11 @@ todoToggle.addEventListener('click', function() {
 todoExit.addEventListener('click', function() {
   todoContainer.classList.add("disappear2")
   todoContainer.classList.remove("appear")
-  todoContainer.addEventListener('transitionend', function(){
+  //todoContainer.addEventListener('transitionend', function(){
     todoContainer.style.display = "none"
     todoToggle.style.display = "block"
-  })
+    console.log("fired")
+  //})
 })
 
 
