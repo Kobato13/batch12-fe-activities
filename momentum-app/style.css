@@ -103,9 +103,11 @@ body {
   }
   
   #focus-form {
+    text-align: center;
   }
   #focus-form input[type="text"] {
     font-size: 2rem;
+    width: 90%;
   }
   input:focus {
     outline: none;
@@ -115,7 +117,7 @@ body {
   }
   
 .greetings-container {
-  padding: 5rem;
+  padding: 5rem 1rem;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -126,6 +128,7 @@ body {
 
 .focus-container {
   display: none;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
@@ -140,9 +143,9 @@ body {
 
   .fade-in {
     animation-name: slowTransition;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
 
 @keyframes slowTransition {
   0% {
@@ -199,6 +202,7 @@ body {
     .new-quote, .add-quote {
       border: 1px solid black;
       border-radius: 1rem;
+      padding: 0.3rem;
       cursor: pointer;
     }
       .new-quote:hover, .add-quote:hover {
@@ -290,8 +294,8 @@ body {
         color: rgb(32, 32, 32);
       }
       .todo-button:hover {
-        background: rgb(32, 32, 32);
-        color: white;
+        border:rgb(32, 32, 32);
+        color: rgb(0, 225, 255);
       }
     .todo-sub-container ul {
       width: 100%;
@@ -327,16 +331,18 @@ body {
           cursor: pointer;
         }
         .todo-complete {
-          background: gray;
+          background: white;
+          color: rgb(32, 32, 32);
         }
           .todo-complete:hover {
-            background: rgb(0, 236, 0);
+            color: rgb(0, 236, 0);
           }
         .todo-delete {
-          background: gray;
+          background: white;
+          color: rgb(32, 32, 32);
         }
           .todo-delete:hover {
-            background: red;
+            color: red;
           }
         .fa-trash, .fa-check {
           pointer-events: none;
@@ -390,6 +396,15 @@ body {
   }
   #focus-form input[type="text"] {
     font-size: 1.5rem;
+  }
+  .quotes-container {
+    width: 90%;
+  }
+  #quote-form input[type="text"] {
+    width: 20rem;
+  }
+  .quotes-options {
+    width: 20rem;
   }
 }
 @media all and (max-width: 500px) {
