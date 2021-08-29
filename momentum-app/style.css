@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Besley:ital@1&family=Noto+Serif&family=Poppins:wght@300&display=swap');
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -38,17 +38,12 @@ body {
   opacity: 0.9;
   z-index: -2;
 }
-  @media all and (max-width: 480px) {
-    .image-container {
-      
-    } 
-  }
-  .image-blend {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background: rgba(95, 95, 95, 1);
-    mix-blend-mode: overlay;
+.image-blend {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: rgba(95, 95, 95, 1);
+  mix-blend-mode: overlay;
     z-index: -1;
   }
 
@@ -70,37 +65,27 @@ body {
   .time {
     display: none;
   }
-    .time h1 {
-      font-size: 8rem;
-    }
+  .time h1 {
+    font-size: 8rem;
+  }
   .sub-container {
     text-align: center;
   }
-
-.input-container {
-  display: flex;
-  width: 70vw;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.input-form {
-  /* display: none; */
-}
+  
+  .input-container {
+    display: flex;
+    width: 70vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .input-form {
+    /* display: none; */
+  }
   #input-form h1 {
     font-size: 4rem; 
-  }
-  @media all and (max-width: 900px) {
-    #input-form h1 {
-      font-size: 3rem;
-    } 
-  }
-  @media all and (max-width: 500px) {
-    #input-form h1 {
-      font-size: 2rem;
-    } 
   }
   #input-form input {
     padding-top: 2rem;
@@ -116,9 +101,9 @@ body {
     border-bottom: 1px solid white;
     text-shadow: .15rem .15rem black;
   }
-
-#focus-form {
-}
+  
+  #focus-form {
+  }
   #focus-form input[type="text"] {
     font-size: 2rem;
   }
@@ -128,15 +113,16 @@ body {
   input[type="submit"] {
     display: none;
   }
-
+  
 .greetings-container {
   padding: 5rem;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
 }
-  .greetings h1 {
-    font-size: 4rem;
-  }
+.greetings h1 {
+  font-size: 4rem;
+}
 
 .focus-container {
   display: none;
@@ -147,13 +133,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-weight: 500;
+    font-size: 2rem;
   }
   .focus-container strong {
   }
 
-.fade-in {
-  animation-name: slowTransition;
+  .fade-in {
+    animation-name: slowTransition;
   animation-duration: 1s;
   animation-timing-function: ease-out;
 }
@@ -174,7 +160,7 @@ body {
   visibility: hidden;
   position: absolute;
   width: 50%;
-  bottom: 4rem;
+  bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -274,7 +260,7 @@ body {
     
   .todo-sub-container {
     padding: 1.3rem;
-    width: 25rem;
+    min-width: 25rem;
     display: flex;
     flex-direction: column;
   }
@@ -384,3 +370,65 @@ body {
             transform: translateX(0);
           }
         }
+
+
+@media all and (max-width: 900px) {
+  .time h1 {
+    font-size: 6rem;
+  } 
+  #input-form h1 {
+    font-size: 3rem;
+  } 
+  #input-form input[type="text"] {
+    font-size: 3rem;
+  }
+  .greetings-container h1 {
+    font-size: 2rem;
+  }
+  .focus-container h1 {
+    font-size: 1.5rem;
+  }
+  #focus-form input[type="text"] {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 500px) {
+  .image-container {
+    background-position: center center;
+  }
+  .time h1 {
+    font-size: 4rem;
+  } 
+  #input-form h1 {
+    font-size: 2rem;
+  } 
+  #input-form input[type="text"] {
+    font-size: 2rem;
+  }
+  .greetings-container h1 {
+    font-size: 1.2rem;
+  }
+  .focus-container h1 {
+    font-size: 1.2rem;
+  }
+  #focus-form input[type="text"] {
+    font-size: 1.2rem;
+  }
+  .quotes-container {
+    bottom: 1rem;
+  }
+  .todo-container{
+    top: 0;
+    left: 0;
+    width: 100%;
+  } 
+  .todo-sub-container {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .image-container {
+    
+  } 
+}
