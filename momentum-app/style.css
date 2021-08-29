@@ -260,7 +260,7 @@ body {
     
   .todo-sub-container {
     padding: 1.3rem;
-    min-width: 25rem;
+    width: 25rem;
     display: flex;
     flex-direction: column;
   }
