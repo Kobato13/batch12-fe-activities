@@ -420,6 +420,9 @@ body {
   #input-form input[type="text"] {
     font-size: 2rem;
   }
+  .greetings-container {
+    padding: 3rem 1rem;
+  }
   .greetings-container h1 {
     font-size: 1.2rem;
   }
@@ -430,7 +433,7 @@ body {
     font-size: 1.2rem;
   }
   .quotes-container {
-    bottom: 1rem;
+    bottom: 0;
   }
   .todo-container{
     top: 0;
