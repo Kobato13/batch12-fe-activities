@@ -26,7 +26,7 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
-  background: rgba(95, 95, 95, 1);
+  background: rgb(78, 78, 78);
   mix-blend-mode: overlay;
     z-index: -1;
   }
@@ -48,6 +48,7 @@ body {
   }
   .time {
     display: none;
+    font-family: 'Noto Serif', serif;
   }
   .time h1 {
     font-size: 8rem;
@@ -349,6 +350,18 @@ body {
         border-radius: 10px;
         transition: all 0.2s ease-in;
       }
+      .todo-item::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 1.3em;
+        height: 2.1em;
+        width: 2em;
+        background: white;
+      }
+        .todo-item:hover::after {
+          display: none;
+        }
       .todo-icons span {
         padding: 0 1rem 0 1rem;
         cursor: pointer;
@@ -368,6 +381,7 @@ body {
           cursor: pointer;
         }
         .todo-complete {
+          font-size: 1.5em;
           background: white;
           color: rgb(32, 32, 32);
         }
@@ -442,6 +456,9 @@ body {
   }
   .quotes-options {
     width: 20rem;
+  }
+  .todo-item::after {
+    display: none;
   }
 }
 @media all and (max-width: 500px) {

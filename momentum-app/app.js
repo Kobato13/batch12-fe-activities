@@ -85,7 +85,6 @@ function ToDoExit(){
     //todoContainer.addEventListener('transitionend', function(){
       todoContainer.style.display = "none"
       todoToggle.style.display = "block"
-      console.log("fired")
     //})
 }
 todoExit.addEventListener('click', ToDoExit)
