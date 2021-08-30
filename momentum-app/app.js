@@ -1,4 +1,5 @@
 const mainContainer = document.querySelector(".main-container")
+const container2 = document.querySelector(".container")
 
 const inputForm = document.querySelector("#input-form")
 const username = document.querySelector("#username")
@@ -27,7 +28,7 @@ function greetings(){
   setGreetings.append(setGreetingName)
   setGreetingName.innerHTML = "Hi " + username.value + ", have a great day!"
   setGreetings.style.display = "flex"
-  setGreetings.classList.add("fade-in")
+  container2.classList.add("fade-in")
   setFocus.style.display = "flex"
   setTime.style.display = "block"
   todoToggle.style.visibility = "visible"
