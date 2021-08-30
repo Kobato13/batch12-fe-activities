@@ -13,22 +13,6 @@ body {
   color: white;
 }
 
-.background-toggle {
-  visibility: hidden;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1rem;
-  padding: 0.5rem;
-  border: 1px solid black;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: .3s ease;
-}
-  .background-toggle:hover {
-    border-color: cyan;
-  }
-
 .image-container {
   position: absolute;
   height: 100vh;
@@ -73,6 +57,7 @@ body {
   }
   
   .input-container {
+    transform: translateY(7rem);
     display: flex;
     height: 100%;
     width: 100%;
@@ -167,6 +152,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-shadow: .07rem .07rem black;
 }
   .quotes-container2 {
     width: 100%;
@@ -215,23 +201,68 @@ body {
       }
 
 
-/* TODO */
-
-.todo-toggle {
+.background-toggle, .todo-toggle {
   visibility: hidden;
   position: absolute;
   top: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all .3s ease-in;
+  text-shadow: .1rem .1rem black;
+}
+.background-toggle {
+  right: 1rem;
+}
+  .background-toggle::before, .todo-toggle::before,
+  .background-toggle::after, .todo-toggle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .background-toggle::before, .todo-toggle::before {
+    transform: scale(0, 1);
+    border-top: 1px solid cyan;
+    border-bottom: 1px solid cyan;
+    border-radius: 0;
+    transition: transform .25s ease-out;
+  }
+  .background-toggle:hover::before, .todo-toggle:hover::before {
+    transform: scale(1, 1);
+    border-color: cyan;
+    border-radius: 1rem;
+  }
+  .background-toggle::after, .todo-toggle::after {
+    transform: scale(1, 0);
+    border-left: 1px solid cyan;
+    border-right: 1px solid cyan;
+    border-radius: 0;
+    transition: transform .25s ease-out;
+  }
+  .background-toggle:hover::after, .todo-toggle:hover::after {
+    transform: scale(1, 1);
+    border-color: cyan;
+    border-radius: 1rem;
+  }
+    .todo-toggle:hover::before {
+      border-radius: 2rem;
+    }
+    .todo-toggle:hover::after {
+      border-radius: 2rem;
+    }
+
+.todo-toggle {
   left: 1rem;
   font-size: 2rem;
   padding: 0.5rem 1rem;
-  border: 1px solid black;
   border-radius: 2rem;
-  cursor: pointer;
-  transition: .3s ease;
-  text-shadow: .1rem .1rem black;
 }
   .todo-toggle:hover {
-    border-color: cyan;
   }
 
 .todo-container::-webkit-scrollbar {

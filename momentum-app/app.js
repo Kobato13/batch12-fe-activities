@@ -1,3 +1,5 @@
+const mainContainer = document.querySelector(".main-container")
+
 const inputForm = document.querySelector("#input-form")
 const username = document.querySelector("#username")
 const focusForm = document.querySelector("#focus-form")
@@ -76,15 +78,17 @@ todoToggle.addEventListener('click', function() {
   todoContainer.classList.add("appear")
   todoContainer.classList.remove("disappear2")
 })
-todoExit.addEventListener('click', function() {
+function ToDoExit(){
   todoContainer.classList.add("disappear2")
-  todoContainer.classList.remove("appear")
-  //todoContainer.addEventListener('transitionend', function(){
-    todoContainer.style.display = "none"
-    todoToggle.style.display = "block"
-    console.log("fired")
-  //})
-})
+    todoContainer.classList.remove("appear")
+    //todoContainer.addEventListener('transitionend', function(){
+      todoContainer.style.display = "none"
+      todoToggle.style.display = "block"
+      console.log("fired")
+    //})
+}
+todoExit.addEventListener('click', ToDoExit)
+mainContainer.addEventListener('click', ToDoExit)
 
 
 
