@@ -202,10 +202,9 @@ body {
       }
 
 
-.background-toggle, .todo-toggle {
+.background-toggle, .todo-toggle, .reset-button {
   visibility: hidden;
   position: absolute;
-  top: 1rem;
   border: 1px solid black;
   border-radius: 1rem;
   font-size: 1rem;
@@ -214,7 +213,15 @@ body {
   transition: all .3s ease-in;
   text-shadow: .1rem .1rem black;
 }
+  .reset-button{
+    bottom: 1rem;
+    left: 1rem;
+  }
+    .reset-button:hover{
+      border: 1px solid cyan;
+    }
 .background-toggle {
+  top: 1rem;
   right: 1rem;
 }
   .background-toggle::before, .todo-toggle::before,
@@ -258,6 +265,7 @@ body {
     }
 
 .todo-toggle {
+  top: 1rem;
   left: 1rem;
   font-size: 2rem;
   padding: 0.5rem 1rem;

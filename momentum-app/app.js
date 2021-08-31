@@ -13,37 +13,48 @@ const setFocusH1 = document.createElement("h1")
 
 const setTime = document.querySelector(".time")
 
-//inputForm.style.display = "block"
+// Check if it has a localstorage
+if (localStorage.getItem("name") != null){
+  console.log("has name")
+  document.addEventListener("DOMContentLoaded", loadState)
+}
+
+//INPUT FORMS SUBMIT
+
 inputForm.addEventListener("submit", function(e) {
   e.preventDefault()
-  greetings()
+  greetings(username.value)
+  saveStateName(username.value)
 })
 focusForm.addEventListener("submit", function(e) {
   e.preventDefault()
-  focusFunction()
+  focusFunction(mainFocus.value)
+  saveStateFocus(mainFocus.value)
 })
 
-function greetings(){
+function greetings(value){
+  setTime.style.display = "block"
   inputForm.style.display = "none"
   setGreetings.append(setGreetingName)
-  setGreetingName.innerHTML = "Hi " + username.value + ", have a great day!"
+  setGreetingName.innerHTML = "Hi " + value + ", have a great day!"
   setGreetings.style.display = "flex"
   container2.classList.add("fade-in")
   setFocus.style.display = "flex"
-  setTime.style.display = "block"
   todoToggle.style.visibility = "visible"
   backgroundToggle.style.visibility = "visible"
+  resetButton.style.visibility = "visible"
   quotesMain.style.visibility = "visible"
 }
-function focusFunction(){
+function focusFunction(value){
   focusForm.style.display = "none"
   setFocus.classList.add("fade-in")
   setFocus.append(setFocusH1)
   setFocusH1.innerHTML = "Your main focus for today <br><strong>" 
-          + mainFocus.value + "</strong>"
+          + value + "</strong>"
   setFocus.classList.add("fade-in")
 }
 
+// TIME FUNCTION
 setInterval(function(){
   let today = new Date()
 
@@ -66,6 +77,7 @@ function addZero(num) {
   else return num
 }
 
+// TODO FUNCTIONS
 const todoContainer = document.querySelector(".todo-container")
 const todoInput = document.querySelector(".todo-input")
 const todoButton = document.querySelector(".todo-button")
@@ -81,24 +93,22 @@ todoToggle.addEventListener('click', function() {
 })
 function ToDoExit(){
   todoContainer.classList.add("disappear2")
-    todoContainer.classList.remove("appear")
-    //todoContainer.addEventListener('transitionend', function(){
-      todoContainer.style.display = "none"
-      todoToggle.style.display = "block"
-    //})
+  todoContainer.classList.remove("appear")
+  //todoContainer.addEventListener('transitionend', function(){
+    todoContainer.style.display = "none"
+    todoToggle.style.display = "block"
+  //})
 }
 todoExit.addEventListener('click', ToDoExit)
 mainContainer.addEventListener('click', ToDoExit)
-
-
+todoList.addEventListener('click', todoCheck)
 
 todoButton.addEventListener('click', function(e) {
   e.preventDefault()
   addTodo()
 })
-todoList.addEventListener('click', todoCheck)
 
-function addTodo() {
+function addTodoItem(todoItem) {
   const newTodo = document.createElement('li')
   newTodo.classList.add("todo-item")
 
@@ -108,7 +118,7 @@ function addTodo() {
   newTodo.appendChild(completeBtn)
 
   const todoText = document.createElement('p')
-  todoText.innerHTML = todoInput.value
+  todoText.innerHTML = todoItem
   newTodo.appendChild(todoText)
 
   const deleteBtn = document.createElement('button')
@@ -117,6 +127,12 @@ function addTodo() {
   newTodo.appendChild(deleteBtn)
 
   todoList.append(newTodo)
+}
+
+function addTodo() {
+  addTodoItem(todoInput.value)
+  // add todo to localstorage
+  saveLocalTodos(todoInput.value)
   todoInput.value = ""
 }
 
@@ -126,6 +142,7 @@ function todoCheck(e) {
   if(item.classList[0] === 'todo-delete'){
     const todo = item.parentElement
     todo.classList.add("disappear")
+    deleteLocalTodos(todo)
     todo.addEventListener('transitionend', function(){
       todo.remove()
     })
@@ -137,7 +154,87 @@ function todoCheck(e) {
   }
 }
 
+let state = { name: "", focus: "", todos: [] }
 
+// Save State
+function saveStateName(key) {
+  state.name = key
+  localStorage.setItem("name", JSON.stringify(state.name))
+}
+
+function saveStateFocus(key) {
+  state.focus = key
+  localStorage.setItem("focus", JSON.stringify(state.focus))
+}
+
+// SAVING LOCAL STORAGE
+function checkingTodos(todos){
+  if (localStorage.getItem("todos") === null ) {
+    todos = []
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"))
+  }
+}
+
+function saveLocalTodos(todo) {
+  // if (localStorage.getItem("todos") === null ) {
+  //   state.todos = []
+  // } else {
+  //   state.todos = JSON.parse(localStorage.getItem("todos"))
+  // }
+  checkingTodos(state.todos)
+  state.todos.push(todo)
+  localStorage.setItem("todos", JSON.stringify(state.todos))
+}
+
+// Delete Todo from LocalStorage
+function deleteLocalTodos(todo) {
+  let todos
+  if (localStorage.getItem("todos") === null ) {
+    todos = []
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"))
+  }
+  // checkingTodos(todos)
+  const todoIndex = todo.children[1].innerText
+  todos.splice(todos.indexOf(todoIndex), 1)
+  localStorage.setItem("todos", JSON.stringify(todos))
+}
+
+
+// LOAD
+function loadState() {
+  let loadState = { name: "", focus: "", todos: []}
+  if (localStorage.getItem("todos") === null ) {
+    loadState.todos = []
+  } else {
+    loadState.todos = JSON.parse(localStorage.getItem("todos"))
+  }
+  // checkingTodos(loadState.todos)
+  loadState.name = JSON.parse(localStorage.getItem("name"))
+  loadState.focus = JSON.parse(localStorage.getItem("focus"))
+  
+  loadState.todos.forEach(function(todo) {
+    addTodoItem(todo)
+  })
+  
+  greetings(loadState.name)
+  if (localStorage.getItem("focus") != null){
+    console.log("has focus")
+    focusFunction(loadState.focus)
+  }
+}
+
+// RESET
+const resetButton = document.querySelector(".reset-button")
+resetButton.addEventListener("click", function() {
+  localStorage.clear();
+
+  // defaultLoad()
+  location.reload();
+})
+
+// BACKGROUND RANDOMIZE
 const backgroundToggle = document.querySelector(".background-toggle")
 const backgroundImage = document.querySelector(".image-container")
 const backgrounds = [ 'url(./images/1.jpg)', 'url(./images/2.png)',
@@ -153,7 +250,7 @@ function ToggleBackground() {
   else backgroundImage.style.backgroundImage = backgrounds[randomize]
 }
 
-
+// QUOTES
 const quotesMain = document.querySelector(".quotes-container")
 const quoteContainer = document.querySelector(".quotes-container2")
 const quoteText = document.createElement("p")
