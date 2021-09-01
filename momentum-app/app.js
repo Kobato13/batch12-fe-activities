@@ -24,11 +24,13 @@ if (localStorage.getItem("name") != null){
 inputForm.addEventListener("submit", function(e) {
   e.preventDefault()
   greetings(username.value)
+  container2.classList.add("fade-in")
   saveStateName(username.value)
 })
 focusForm.addEventListener("submit", function(e) {
   e.preventDefault()
   focusFunction(mainFocus.value)
+  setFocus.classList.add("fade-in")
   saveStateFocus(mainFocus.value)
 })
 
@@ -38,7 +40,6 @@ function greetings(value){
   setGreetings.append(setGreetingName)
   setGreetingName.innerHTML = "Hi " + value + ", have a great day!"
   setGreetings.style.display = "flex"
-  container2.classList.add("fade-in")
   setFocus.style.display = "flex"
   todoToggle.style.visibility = "visible"
   backgroundToggle.style.visibility = "visible"
@@ -47,11 +48,9 @@ function greetings(value){
 }
 function focusFunction(value){
   focusForm.style.display = "none"
-  setFocus.classList.add("fade-in")
   setFocus.append(setFocusH1)
   setFocusH1.innerHTML = "Your main focus for today <br><strong>" 
           + value + "</strong>"
-  setFocus.classList.add("fade-in")
 }
 
 // TIME FUNCTION

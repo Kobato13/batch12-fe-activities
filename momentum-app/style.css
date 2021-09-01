@@ -212,6 +212,7 @@ body {
   cursor: pointer;
   transition: all .3s ease-in;
   text-shadow: .1rem .1rem black;
+  z-index: 3;
 }
   .reset-button{
     bottom: 1rem;
@@ -516,6 +517,10 @@ body {
   .todo-toggle {
     font-size: 1rem;
     padding: 0.5rem;
+  }
+  .reset-button{
+    font-size: 0.8rem;
+    bottom: 0.5rem;
   }
   .todo-container{
     top: 0;
