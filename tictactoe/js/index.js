@@ -7,6 +7,7 @@ let boardState = ['', '', '', // board state in 3 by 3
                   '', '', '', // we will fill the array
                   '', '', '']
 let currentPlayer = 'X'
+let gameActive = true
 
 
 // Looping through the array of cells that the cell has been clicked
@@ -31,6 +32,11 @@ function playerChange() {
 
 // Restarting the game and the array of the board
 function restartGame() {
+  boardState = ['', '', '', '', '', '', '', '', '']
+  gameActive = true
 
+  cells.forEach(function(cell) {
+    cell.innerHTML = ''
+  })
 }
 resetButton.addEventListener('click', restartGame)
