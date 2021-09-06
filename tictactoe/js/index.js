@@ -23,7 +23,7 @@ const winningMoves = [
 // Looping through the array of cells that the cell has been clicked
 cells.forEach(function(cell, index) {
   cell.addEventListener('click', function(){
-    if(isValid(cell) && gameActive === true){
+    if(isValid(cell) && gameActive === true) {
       cell.innerHTML = currentPlayer
       boardState[index] = currentPlayer
       resultValid()
@@ -49,15 +49,13 @@ function resultValid() {
       break
     }
   }
-  
+
   // Just announcing who wins
   if (roundWon === true) {
     if(currentPlayer === 'X') {
-      winningPlayer.innerHTML = 'Player <span class="playerO">X</span> Won'
-      winningPlayer.classList.remove('hidden')
+      whoWon('X')
     } else {
-      winningPlayer.innerHTML = 'Player <span class="playerX">O</span> Won'
-      winningPlayer.classList.remove('hidden')
+      whoWon('O')
     }
     gameActive = false
     return
@@ -65,9 +63,28 @@ function resultValid() {
 
   // includes means getting a certain variable within the array
   if (!boardState.includes('')){ // so if any of the array is 'NOT' empty
-    winningPlayer.innerHTML = 'Tie'
-    winningPlayer.classList.remove('hidden')
+    whoWon()
   }
+}
+
+// Function to refactor winning messages
+function whoWon(player) {
+  if (player === 'X'){
+    winningPlayer.innerHTML = 'Player <span class="playerO">X</span> Won'
+  } else if (player === 'O') {
+    winningPlayer.innerHTML = 'Player <span class="playerX">O</span> Won'
+  } else {
+    winningPlayer.innerHTML = 'Tie'
+  }
+  winningPlayer.classList.remove('hidden')
+}
+
+// Returning true or false for validating if there's already a text inside the cell
+function isValid(cell) {
+  if (cell.innerHTML === 'X' || cell.innerHTML === 'O'){
+    return false
+  }
+  return true
 }
 
 // Player changing between X and O
@@ -78,14 +95,7 @@ function playerChange() {
     currentPlayer = 'X'
   }
   playerDisplay.innerHTML = currentPlayer
-}
-
-// Returning true or false for validating if there's already a text inside the cell
-function isValid(cell) {
-  if (cell.innerHTML === 'X' || cell.innerHTML === 'O'){
-    return false
-  }
-  return true
+  //console.log(currentPlayer)
 }
 
 // Restarting the game and the array of the board
