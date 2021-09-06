@@ -13,10 +13,12 @@ let gameActive = true
 // Looping through the array of cells that the cell has been clicked
 cells.forEach(function(cell, index) {
   cell.addEventListener('click', function(){
-    cell.innerHTML = currentPlayer
-    boardState[index] = currentPlayer
-    resultValid()
-    playerChange()
+    if(isValid(cell) && gameActive === true){
+      cell.innerHTML = currentPlayer
+      boardState[index] = currentPlayer
+      resultValid()
+      playerChange()
+    }
   })
 })
 
@@ -27,7 +29,20 @@ function resultValid() {
 
 // Player changing between X and O
 function playerChange() {
+  if (currentPlayer === 'X') {
+    currentPlayer = 'O'
+  } else {
+    currentPlayer = 'X'
+  }
+  playerDisplay.innerHTML = currentPlayer
+}
 
+// Returning true or false for validating if there's already a text inside the cell
+function isValid(cell) {
+  if (cell.innerHTML === 'X' || cell.innerHTML === 'O'){
+    return false
+  }
+  return true
 }
 
 // Restarting the game and the array of the board
