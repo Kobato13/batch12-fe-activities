@@ -1,3 +1,7 @@
+const choosePlayer = document.querySelector('.choose-container')
+const subContainer = document.querySelector('.sub-container')
+const playerX = document.querySelector('.choose.playerX')
+const playerO = document.querySelector('.choose.playerO')
 const cells = Array.from(document.querySelectorAll('.cell'))
 const turnDisplay = document.querySelector('.display.player-turn')
 const playerDisplay = document.querySelector('.display-player')
@@ -9,7 +13,7 @@ const dimLight = document.querySelector('.dim-light')
 let boardState = ['', '', '', // board state in 3 by 3
                   '', '', '', // we will fill the array
                   '', '', '']
-let currentPlayer = 'X'
+let currentPlayer = ''
 let gameActive = true
 
 const winningMoves = [
@@ -22,6 +26,25 @@ const winningMoves = [
   [0, 4, 8], // winning diagonally
   [2, 4, 6]
 ]
+
+// Set the first player
+firstPlayer(playerX, 'X')
+firstPlayer(playerO, 'O')
+
+function firstPlayer(player, symbol) {
+  player.addEventListener('click', function() {
+    currentPlayer = symbol
+    choosePlayer.classList.add('hidden')
+    subContainer.style.display = "flex"
+  }) 
+}
+
+// playerX.addEventListener('click', function() {
+//   currentPlayer = 'X'
+// }) 
+// playerO.addEventListener('click', function() {
+//   currentPlayer = 'O'
+// }) 
 
 TicTacToe()
 
@@ -129,6 +152,8 @@ function restartGame() {
   winningPlayer.classList.add('hidden')
   turnDisplay.style.visibility = 'visible'
   dimLight.classList.add('hidden')
+  choosePlayer.classList.remove('hidden')
+  subContainer.style.display = "none"
 
   if (currentPlayer === 'O') {
     playerChange()
