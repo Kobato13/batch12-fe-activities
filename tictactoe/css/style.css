@@ -6,7 +6,7 @@
   --color-3: rgb(247, 154, 77);
   --color-4: rgb(253, 128, 25);
   --color-5: black;
-  --color-6: rgb(9, 0, 59);
+  --color-6: rgb(0, 5, 49);
   --color-7: rgba(0, 0, 0, 0.575);
   padding: 0;
   margin: 0;
@@ -22,6 +22,7 @@ body {
 }
 
 .main-container {
+  background-color: var(--color-6);
   background-image: url('/tictactoe/images/background.jpg');
   height: 100vh;
   display: flex;
@@ -61,7 +62,7 @@ body {
   border-radius: 3rem;
   margin-top: 10%;
   padding: 3rem;
-  width: 40%;
+  width: 30rem;
   text-align: center;
   text-shadow: 0 0 .1em var(--color-1),
                0 0 .2em var(--color-1);
@@ -144,10 +145,10 @@ body {
     font-size: 3.5rem;
     cursor: pointer;
     z-index: 2;
-    /* box-shadow:
-    0 0 .6rem .3rem #fff,
-    0 0 1rem .6rem rgb(255, 29, 255),
-    0 0 1.4rem .9rem rgb(23, 247, 255); */
+  }
+  .cell:hover {
+    box-shadow: 0 0 1rem var(--color-1),
+                0 0 2rem var(--color-1);
   }
   .cell.X::after, .cell.O::after{
     position: absolute;
@@ -260,5 +261,14 @@ body {
   .title {
     margin-top: 10%;
     font-size: 10rem;
+  }
+  .choose-container {
+    width: 30rem;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .choose-container {
+    width: 20rem;
   }
 }

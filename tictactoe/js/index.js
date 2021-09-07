@@ -5,7 +5,7 @@ const playerO = document.querySelector('.choose.playerO')
 const cells = Array.from(document.querySelectorAll('.cell'))
 const turnDisplay = document.querySelector('.display.player-turn')
 const playerDisplay = document.querySelector('.display-player')
-const winningPlayer = document.querySelector('.winner')
+const winningPlayer = document.querySelector('.display.winner')
 const resetButton = document.querySelector('.reset-button')
 const winningLine = Array.from(document.querySelectorAll('.line'))
 const dimLight = document.querySelector('.dim-light')
@@ -39,13 +39,6 @@ function firstPlayer(player, symbol) {
   }) 
 }
 
-// playerX.addEventListener('click', function() {
-//   currentPlayer = 'X'
-// }) 
-// playerO.addEventListener('click', function() {
-//   currentPlayer = 'O'
-// }) 
-
 TicTacToe()
 
 // Looping through the array of cells that the cell has been clicked
@@ -75,10 +68,8 @@ function resultValid() {
       continue
     }
     if (a === b && b === c) { // if a, b and c have the same 'X' or 'O'
-      //console.log(winningMoves[i])
       // looping through all cell children so you can highlight them
       for (let j = 0; j <= 2; j++) {
-        //console.log(winningMoves[i][j])
         const nCell = 
           document.querySelector(`.cell:nth-child(${winningMoves[i][j]+1})`)
         nCell.style.zIndex = '4'
