@@ -1,7 +1,11 @@
 const cells = Array.from(document.querySelectorAll('.cell'))
+//const display = document.querySelector('.display')
 const playerDisplay = document.querySelector('.display-player')
 const winningPlayer = document.querySelector('.winner')
 const resetButton = document.querySelector('.reset-button')
+const winningLine = Array.from(document.querySelectorAll('.line'))
+
+//console.log(winningLine[0])
 
 let boardState = ['', '', '', // board state in 3 by 3
                   '', '', '', // we will fill the array
@@ -49,6 +53,9 @@ function resultValid() {
       continue
     }
     if (a === b && b === c) { // if a, b and c have the same 'X' or 'O'
+      //console.log(i)
+      winningLine[i].classList.remove('hidden')
+      winningLine[i].classList.add(`line-shadow${currentPlayer}`)
       roundWon = true;
       break
     }
@@ -81,11 +88,12 @@ function whoWon(player) {
     winningPlayer.innerHTML = 'Tie'
   }
   winningPlayer.classList.remove('hidden')
+  //display.classList.add('hidden')
 }
 
 // Returning true or false for validating if there's already a text inside the cell
 function isValid(cell) {
-  if (cell.innerHTML === 'X' || cell.innerHTML === 'O'){
+  if (cell.classList.contains('X') || cell.classList.contains('O')){
     return false
   }
   return true
@@ -94,12 +102,15 @@ function isValid(cell) {
 // Player changing between X and O
 function playerChange() {
   if (currentPlayer === 'X') {
+    playerDisplay.classList.remove(`player${currentPlayer}`)
     currentPlayer = 'O'
+    playerDisplay.classList.add(`player${currentPlayer}`)
   } else {
+    playerDisplay.classList.remove(`player${currentPlayer}`)
     currentPlayer = 'X'
+    playerDisplay.classList.add(`player${currentPlayer}`)
   }
   playerDisplay.innerHTML = currentPlayer
-  //console.log(currentPlayer)
 }
 
 // Restarting the game and the array of the board
@@ -107,6 +118,7 @@ function restartGame() {
   boardState = ['', '', '', '', '', '', '', '', '']
   gameActive = true
   winningPlayer.classList.add('hidden')
+  //display.classList.remove('hidden')
 
   if (currentPlayer === 'O') {
     playerChange()
@@ -115,6 +127,11 @@ function restartGame() {
   cells.forEach(function(cell) {
     cell.classList.remove('X')
     cell.classList.remove('O')
+  })
+  winningLine.forEach(function(line) {
+    line.classList.add('hidden')
+    line.classList.remove('line-shadowX')
+    line.classList.remove('line-shadowO')
   })
 }
 resetButton.addEventListener('click', restartGame)
