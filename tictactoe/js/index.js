@@ -36,7 +36,7 @@ function firstPlayer(player, symbol) {
     currentPlayer = symbol
     choosePlayer.classList.add('hidden')
     subContainer.style.display = "flex"
-  }) 
+  })
 }
 
 TicTacToe()
@@ -51,6 +51,16 @@ function TicTacToe() {
         resultValid()
         playerChange()
       }
+    })
+    cell.addEventListener('mouseenter', function(){
+      if(currentPlayer === 'X'){
+        cell.style.boxShadow = 'inset 0 0 .3rem .3rem var(--color-1)'
+      } else {
+        cell.style.boxShadow = 'inset 0 0 .3rem .3rem var(--color-4)'
+      }
+    })
+    cell.addEventListener('mouseleave', function(){
+      cell.style.boxShadow = ''
     })
   })
 }
@@ -108,6 +118,7 @@ function whoWon(player) {
       'Player <span class="display-player playerO">O</span> Won'
   } else {
     winningPlayer.innerHTML = 'Tie'
+    winningPlayer.style.color = 'white'
   }
   winningPlayer.classList.remove('hidden')
   dimLight.classList.remove('hidden')
