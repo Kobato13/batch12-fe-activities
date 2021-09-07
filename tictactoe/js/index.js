@@ -55,7 +55,7 @@ function resultValid() {
       //console.log(winningMoves[i])
       // looping through all cell children so you can highlight them
       for (let j = 0; j <= 2; j++) {
-        console.log(winningMoves[i][j])
+        //console.log(winningMoves[i][j])
         const nCell = 
           document.querySelector(`.cell:nth-child(${winningMoves[i][j]+1})`)
         nCell.style.zIndex = '4'

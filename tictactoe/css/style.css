@@ -4,9 +4,10 @@
   --color-1: rgb(71, 249, 255);
   --color-2: #03bcf4;
   --color-3: rgb(247, 154, 77);
-  --color-4: rgb(248, 132, 37);
+  --color-4: rgb(253, 128, 25);
   --color-5: black;
-  --color-6: rgb(14, 0, 94);
+  --color-6: rgb(9, 0, 59);
+  --color-7: rgba(0, 0, 0, 0.575);
   padding: 0;
   margin: 0;
 }
@@ -29,7 +30,7 @@ body {
 }
   .dim-light {
     position: absolute;
-    background: rgba(0, 0, 0, 0.37);
+    background: var(--color-7);
     height: 100vh;
     width: 100%;
     z-index: 3;
