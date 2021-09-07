@@ -20,17 +20,21 @@ const winningMoves = [
   [2, 4, 6]
 ]
 
+TicTacToe()
+
 // Looping through the array of cells that the cell has been clicked
-cells.forEach(function(cell, index) {
-  cell.addEventListener('click', function(){
-    if(isValid(cell) && gameActive === true) {
-      cell.innerHTML = currentPlayer
-      boardState[index] = currentPlayer
-      resultValid()
-      playerChange()
-    }
+function TicTacToe() {
+  cells.forEach(function(cell, index) {
+    cell.addEventListener('click', function(){
+      if(isValid(cell) && gameActive === true) {
+        cell.classList.add(currentPlayer)
+        boardState[index] = currentPlayer
+        resultValid()
+        playerChange()
+      }
+    })
   })
-})
+}
 
 // Validation if the game is over or won by whoever
 function resultValid() {
@@ -109,7 +113,8 @@ function restartGame() {
   }
 
   cells.forEach(function(cell) {
-    cell.innerHTML = ''
+    cell.classList.remove('X')
+    cell.classList.remove('O')
   })
 }
 resetButton.addEventListener('click', restartGame)

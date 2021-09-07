@@ -1,32 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 * {
+  --color-1: rgb(71, 249, 255);
+  --color-2: #03bcf4;
+  --color-3: rgb(248, 132, 37);
+  --color-4: rgb(248, 132, 37);
+  --color-6: rgb(14, 0, 94);
   padding: 0;
   margin: 0;
 }
 
+body {
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bolder;
+}
+
 .main-container {
-  background-color: white;
+  background-color: var(--color-6);
   height: 100vh;
-  padding-top: 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .title {
-  color: black;
+  color: var(--color-1);
   font-size: 3rem;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .display {
-  color: black;
+  color: var(--color-1);
   font-size: 2rem;
   margin: 1rem;
 }
-
-.hidden {
-  display: none;
-}
+  .hidden {
+    display: none;
+  }
 
 .container {
   margin: 0 auto;
@@ -37,30 +47,60 @@
   justify-content: center;
 
 }
+  .cell {
+    border: .04rem solid var(--color-1);
+    min-width: 10rem;
+    min-height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    cursor: pointer;
+    /* box-shadow:
+    0 0 .6rem .3rem #fff,
+    0 0 1rem .6rem rgb(255, 29, 255),
+    0 0 1.4rem .9rem rgb(23, 247, 255); */
+  }
+  .cell.X::after, .cell.O::after{
+    position: absolute;
+    font-size: 6rem;
+    content: 'X';
+    color: white;
+    text-shadow: 0 0 1rem var(--color-1),
+                 0 0 2rem var(--color-1);
+    z-index: 2;
+  }
+  .cell.O::after{
+    content: 'O';
+    color: white;
+    text-shadow: 0 0 1rem var(--color-4),
+                 0 0 2rem var(--color-4);
+  }
 
-.cell {
-  border: 1px solid black;
-  border-radius: 1rem;
-  min-width: 6rem;
-  min-height: 6rem;
-  margin: .5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3.5rem;
-  cursor: pointer;
-}
 
 .reset {
   margin-top: .5em;
 }
-
-.reset-button {
-  color: black;
-  border: 1px solid black;
-  background-color: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-size: 20px;
-  cursor: pointer;
-}
+  .reset-button {
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 20px;
+    cursor: pointer;
+  }
+/* 
+.test {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow:
+    0 0 60px 30px #fff,
+    0 0 100px 60px #f0f,
+    0 0 140px 90px #0ff;
+} */
