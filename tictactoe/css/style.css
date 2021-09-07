@@ -22,7 +22,7 @@ body {
 }
 
 .main-container {
-  background-color: var(--color-6);
+  background-image: url('/tictactoe/images/background.jpg');
   height: 100vh;
   display: flex;
   flex-direction: column;
