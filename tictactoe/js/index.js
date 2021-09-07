@@ -120,7 +120,7 @@ function whoWon(player) {
   }
   winningPlayer.classList.remove('hidden')
   dimLight.classList.remove('hidden')
-  turnDisplay.style.visibility = 'hidden'
+  turnDisplay.classList.add('hidden')
 }
 
 // Returning true or false for validating if there's already a text inside the cell
@@ -150,7 +150,7 @@ function restartGame() {
   boardState = ['', '', '', '', '', '', '', '', '']
   gameActive = true
   winningPlayer.classList.add('hidden')
-  turnDisplay.style.visibility = 'visible'
+  turnDisplay.classList.remove('hidden')
   dimLight.classList.add('hidden')
   choosePlayer.classList.remove('hidden')
   subContainer.style.display = "none"
