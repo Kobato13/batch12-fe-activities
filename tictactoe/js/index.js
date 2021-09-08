@@ -36,6 +36,8 @@ function firstPlayer(player, symbol) {
     currentPlayer = symbol
     choosePlayer.classList.add('hidden')
     subContainer.style.display = "flex"
+    playerDisplay.classList.add(`player${symbol}`)
+    playerDisplay.innerHTML = symbol
   })
 }
 
