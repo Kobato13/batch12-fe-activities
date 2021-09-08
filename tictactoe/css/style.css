@@ -23,7 +23,9 @@ body {
 
 .main-container {
   background-color: var(--color-6);
-  background-image: url('/tictactoe/images/background.jpg');
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center center;
   height: 100vh;
   display: flex;
   flex-direction: column;
