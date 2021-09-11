@@ -163,7 +163,6 @@ function showHistoryButtons(){
   prevButton.classList.remove('hidden')
   nextButton.classList.remove('hidden')
   nextButton.style.pointerEvents = 'none'
-  console.log(winningIndex)
 }
 
 function moveHistory(player, index) {
