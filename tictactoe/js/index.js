@@ -17,6 +17,7 @@ let boardState = ['', '', '', // board state in 3 by 3
                   '', '', '']
 let storedMoves = [] // storing player for move history
 let storedIndex = [] // storing index for move history
+let winningIndex = 0
 let moveCount = -1
 let currentPlayer = ''
 let gameActive = true
@@ -58,7 +59,6 @@ function TicTacToe() {
         resultValid()
         moveHistory(currentPlayer, index)
         moveCount++
-        console.log(moveCount)
         playerChange()
       }
     })
@@ -74,23 +74,6 @@ function TicTacToe() {
     })
   })
 }
-
-function moveHistory(player, index) {
-  storedMoves.push(player)
-  storedIndex.push(index)
-  console.log(storedMoves + " " + storedIndex)
-}
-
-function previousBtn() {
-  console.log(storedMoves[0] + " " + storedIndex[0])
-  console.log(cells[0])
-  cells[0].classList.remove('X')
-}
-
-function nextBtn() {
-
-}
-
 
 // Validation if the game is over or won by whoever
 function resultValid() {
@@ -113,6 +96,7 @@ function resultValid() {
       }
       winningLine[i].classList.remove('hidden')
       winningLine[i].classList.add(`line-shadow${currentPlayer}`)
+      winningIndex = i
       roundWon = true;
       break
     }
@@ -150,6 +134,7 @@ function whoWon(player) {
   winningPlayer.classList.remove('hidden')
   dimLight.classList.remove('hidden')
   turnDisplay.classList.add('hidden')
+  showHistoryButtons()
 }
 
 // Returning true or false for validating if there's already a text inside the cell
@@ -174,24 +159,66 @@ function playerChange() {
   playerDisplay.innerHTML = currentPlayer
 }
 
+function showHistoryButtons(){
+  prevButton.classList.remove('hidden')
+  nextButton.classList.remove('hidden')
+  nextButton.style.pointerEvents = 'none'
+  console.log(winningIndex)
+}
+
+function moveHistory(player, index) {
+  storedMoves.push(player)
+  storedIndex.push(index)
+}
+
+function previousBtn() {
+  if(moveCount === 1) prevButton.style.pointerEvents = 'none' //prevButton.disabled = true
+  if(moveCount > 0){
+    cells[storedIndex[moveCount]].classList.remove(storedMoves[moveCount])
+    moveCount--
+    nextButton.style.pointerEvents = 'auto'
+  }
+  dimLight.classList.add('hidden')
+  winningLine[winningIndex].classList.add('hidden')
+
+}
+
+function nextBtn() {
+  if(moveCount === storedMoves.length-2){
+    nextButton.style.pointerEvents = 'none'
+    dimLight.classList.remove('hidden')
+    if(winningIndex > 0){
+      winningLine[winningIndex].classList.remove('hidden')
+    }
+  }
+  if (moveCount <= storedMoves.length){
+    moveCount++
+    cells[storedIndex[moveCount]].classList.add(storedMoves[moveCount])
+    prevButton.style.pointerEvents = 'auto'
+  }
+}
+
 // Restarting the game and the array of the board
 function restartGame() {
   boardState = ['', '', '', '', '', '', '', '', '']
   gameActive = true
+  storedMoves = []
+  storedIndex = []
+  winningIndex = 0
+  moveCount = -1
+
   winningPlayer.classList.add('hidden')
   turnDisplay.classList.remove('hidden')
-  dimLight.classList.add('hidden')
   choosePlayer.classList.remove('hidden')
+  dimLight.classList.add('hidden')
   subContainer.style.display = "none"
-
-  if (currentPlayer === 'O') {
-    playerChange()
-  }
+  prevButton.style.pointerEvents = 'auto'
 
   cells.forEach(function(cell) {
     cell.classList.remove('X')
     cell.classList.remove('O')
   })
+
   winningLine.forEach(function(line) {
     line.classList.add('hidden')
     line.classList.remove('line-shadowX')
@@ -203,6 +230,7 @@ function restartGame() {
     nCell.style.zIndex = '2'
   }
 }
+
 resetButton.addEventListener('click', restartGame)
 prevButton.addEventListener('click', previousBtn)
 nextButton.addEventListener('click', nextBtn)
