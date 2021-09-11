@@ -171,7 +171,7 @@ body {
   margin-top: 2rem;
   z-index: 4;
 }
-  .reset-button {
+  .reset-button, #prev-button, #next-button {
     color: var(--color-5);
     border: 1px solid black;
     background-color: var(--color-2);
@@ -182,7 +182,7 @@ body {
     box-shadow: 0 0 1rem var(--color-2),
                 0 0 2rem var(--color-2);
   }
-  .reset-button:hover {
+  .reset-button:hover, #prev-button:hover, #next-button:hover {
     border: 1px solid black;
     background-color: var(--color-1);
     box-shadow: 0 0 1rem var(--color-2),

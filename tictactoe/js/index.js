@@ -7,12 +7,17 @@ const turnDisplay = document.querySelector('.display.player-turn')
 const playerDisplay = document.querySelector('.display-player')
 const winningPlayer = document.querySelector('.display.winner')
 const resetButton = document.querySelector('.reset-button')
+const prevButton = document.querySelector('#prev-button')
+const nextButton = document.querySelector('#next-button')
 const winningLine = Array.from(document.querySelectorAll('.line'))
 const dimLight = document.querySelector('.dim-light')
 
 let boardState = ['', '', '', // board state in 3 by 3
                   '', '', '', // we will fill the array
                   '', '', '']
+let storedMoves = [] // storing player for move history
+let storedIndex = [] // storing index for move history
+let moveCount = -1
 let currentPlayer = ''
 let gameActive = true
 
@@ -51,6 +56,9 @@ function TicTacToe() {
         cell.classList.add(currentPlayer)
         boardState[index] = currentPlayer
         resultValid()
+        moveHistory(currentPlayer, index)
+        moveCount++
+        console.log(moveCount)
         playerChange()
       }
     })
@@ -66,6 +74,23 @@ function TicTacToe() {
     })
   })
 }
+
+function moveHistory(player, index) {
+  storedMoves.push(player)
+  storedIndex.push(index)
+  console.log(storedMoves + " " + storedIndex)
+}
+
+function previousBtn() {
+  console.log(storedMoves[0] + " " + storedIndex[0])
+  console.log(cells[0])
+  cells[0].classList.remove('X')
+}
+
+function nextBtn() {
+
+}
+
 
 // Validation if the game is over or won by whoever
 function resultValid() {
@@ -179,3 +204,5 @@ function restartGame() {
   }
 }
 resetButton.addEventListener('click', restartGame)
+prevButton.addEventListener('click', previousBtn)
+nextButton.addEventListener('click', nextBtn)
